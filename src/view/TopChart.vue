@@ -31,26 +31,26 @@
                                             <!-- {{getSong.tracks}} -->
                                         </div>
                                         <small class="text-gray-300 text-[12px]">
-                                                                                           <!-- {{song.artist}} -->
-                                                                                        </small>
+                                                                                               <!-- {{song.artist}} -->
+                                                                                            </small>
                                         <div>
                                             <small class="text-white text-[12px]">
-                                                                                             <!-- {{song.timer}} -->
-                                                
-                                                                                            </small>
+                                                                                                 <!-- {{song.timer}} -->
+                                                    
+                                                                                                </small>
                                         </div>
                                     </div>
                                 </div>
                                 <div id="like">
                                     <div class="">
                                         <audio id="audio" @click="play()" v-if="!isPlaying" class="h-7 w-7 rounded-full bg-[blue] overflow-hidden flex items-center justify-center ">
-                                                                                        <i
-                                                                                            class="fa-solid fa-play text-white flex items-center justify-center w-full"></i>
-                                                                                    </audio>
+                                                                                            <i
+                                                                                                class="fa-solid fa-play text-white flex items-center justify-center w-full"></i>
+                                                                                        </audio>
                                         <audio @click="pause()" v-else class="h-7 w-7 rounded-full bg-[blue] overflow-hidden flex items-center justify-center ">
-                                                        <!-- <i class="fa-solid fa-play text-white flex items-center justify-center w-full"></i> -->
-                                                        <i class="fa-solid fa-pause text-white flex items-center justify-center w-full"></i>
-                                                    </audio>
+                                                            <!-- <i class="fa-solid fa-play text-white flex items-center justify-center w-full"></i> -->
+                                                            <i class="fa-solid fa-pause text-white flex items-center justify-center w-full"></i>
+                                                        </audio>
                                     </div>
                                 </div>
                             </div>
@@ -60,187 +60,187 @@
                 </div>
             </div>
     
-             <div class=" sm:w-full  lg:hidden space-y-5 ">
-                                <div class=" w-full  bg-blue-300/40 relative lg:bg-blue-300/90  rounded-[35px]">
-                                    <div class="text relative w-full flex flex-col items-start justify-center lg:block h-full space-y-3 p-[2rem] z-10">
-                                        <div id="current" class="text-[14px] text-white">
-                                            Current playlist
-                                        </div>
-                                        <div>
-                                            <div class="w-full lg:w-2/3">
-                                                <div class="text-[40px] text-white">
-                                                    R & B Hits
-                                                </div>
-                                                <small class="text-white w-2/4">
-                                                                                    All mine, Lie again, petty call everyday. <br>
-                                                                                    Out of time, No love, Bad habit, <br>
-                                                                                    and so much more
-                                                                                </small>
-                                                <div class="mt-5">
-                                                    <div class="flex -space-x-1 overflow-hidden">
-                                                        <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
-                                                        <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
-                                                        <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80" alt="" />
-                                                        <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="absolute top-0 w-full h-full">
-                                        <div class="bg-[url('../../assets/images/images/Vector.svg')] overflow-hidden rounded-[35px] h-full bg-no-repeat absolute top-0 left-0 bottom-0 w-full bg-right-top right-0">
-                                        </div>
-                                        <div class="bg-[url('../../assets/images/images/singer.png')] h-full bg-no-repeat bottom-0 left-0 top-0 bg-right-top right-0 absolute lg:w-8/12 xl:w-7/12">
-                                        </div>
-                                    </div>
+            <div class=" sm:w-full  lg:hidden space-y-5 ">
+                <div class=" w-full  bg-blue-300/40 relative lg:bg-blue-300/90  rounded-[35px]">
+                    <div class="text relative w-full flex flex-col items-start justify-center lg:block h-full space-y-3 p-[2rem] z-10">
+                        <div id="current" class="text-[14px] text-white">
+                            Current playlist
+                        </div>
+                        <div>
+                            <div class="w-full lg:w-2/3">
+                                <div class="text-[40px] text-white">
+                                    R & B Hits
                                 </div>
-                                <div class="w-full hidden sm:block  space-y-4 h-full ">
-                                    <div class="text-[20px] font-bold text-white">
-                                        Top Charts
+                                <small class="text-white w-2/4">
+                                                                                        All mine, Lie again, petty call everyday. <br>
+                                                                                        Out of time, No love, Bad habit, <br>
+                                                                                        and so much more
+                                                                                    </small>
+                                <div class="mt-5">
+                                    <div class="flex -space-x-1 overflow-hidden">
+                                        <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+                                        <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+                                        <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80" alt="" />
+                                        <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
                                     </div>
-                                    <div class="space-y-4">
-                                        <div class="p-3 bg-[rgba(0,0,0,.5)] rounded-sm " v-for="song in song" :key="song.id">
-                                            <div class="flex justify-between items-center">
-                                                <div class="flex">
-                                                    <div class="h-16 w-16 bg-red-500"></div>
-                    
-                                                    <div class="ml-3 leading-[20px]">
-                                                        <div class="text-white text-[17px] font-light">
-                                                            {{song.title}}
-                                                        </div>
-                                                        <small class="text-gray-300 text-[12px]">
-                                                                                           {{song.artist}}
-                                                                                        </small>
-                                                        <div>
-                                                            <small class="text-white text-[12px]">
-                                                                                             {{song.timer}}
-                                                
-                                                                                            </small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div id="like">
-                                                    <div class="">
-                                                        <button @click="play()" v-if="!isPlaying" class="h-7 w-7 rounded-full bg-[blue] overflow-hidden flex items-center justify-center ">
-                                                                                        <i
-                                                                                            class="fa-solid fa-play text-white flex items-center justify-center w-full"></i>
-                                                                                    </button>
-                                                        <div @click="pause()" v-else class="h-7 w-7 rounded-full bg-[blue] overflow-hidden flex items-center justify-center ">
-                                                        
-                                                            <i class="fa-solid fa-pause text-white flex items-center justify-center w-full"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                    
                                 </div>
                             </div>
-                            <div class="w-full sm:hidden space-y-4 h-full ">
-                                <div class="text-[20px] font-bold text-white">
-                                    Top Charts
-                                </div>
-                                <div class="owl-carousel owl-theme block w-full z-[0] space-y-4 playlist" id="carousel">
-                                   
-                                    <keep-alive>
-                    
-                                    </keep-alive>
-                                    <div v-for="idks in idk" :key="idks.id">
-                                    </div>
-                                    <div class="p-3 bg-[rgba(0,0,0,.5)] rounded-sm w-full" v-for="song in songs" :key="song.id">
-                                        <div class="w-full">
-                                            <div class="flex items-center justify-between w-full">
-                                                <div class="flex">
-                                                    <div class="h-16 w-16 bg-red-500"></div>
-                    
-                                                    <div class="ml-3 leading-[20px]">
-                                                        <div class="text-white text-[17px] font-light">
-                                                            {{song.title}}
-                                                        </div>
-                                                        <small class="text-gray-300 text-[12px]">
-                                                                                           {{song.artist}}
-                                                                                        </small>
-                                                        <div>
-                                                            <small class="text-white text-[12px]">
-                                                                                             {{song.timer}}
-                                                
+                        </div>
+                    </div>
+                    <div class="absolute top-0 w-full h-full">
+                        <div class="bg-[url('../../assets/images/images/Vector.svg')] overflow-hidden rounded-[35px] h-full bg-no-repeat absolute top-0 left-0 bottom-0 w-full bg-right-top right-0">
+                        </div>
+                        <div class="bg-[url('../../assets/images/images/singer.png')] h-full bg-no-repeat bottom-0 left-0 top-0 bg-right-top right-0 absolute lg:w-8/12 xl:w-7/12">
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full hidden sm:block  space-y-4 h-full ">
+                    <div class="text-[20px] font-bold text-white">
+                        Top Charts
+                    </div>
+                    <div class="space-y-4">
+                        <div class="p-3 bg-[rgba(0,0,0,.5)] rounded-sm ">
+                            <div class="flex justify-between items-center">
+                                <div class="flex">
+                                    <div class="h-16 w-16 bg-red-500"></div>
+    
+                                    <div class="ml-3 leading-[20px]">
+                                        <div class="text-white text-[17px] font-light">
+                                            <!-- {{song.title}} -->
+                                        </div>
+                                        <small class="text-gray-300 text-[12px]">
+                                                                                               <!-- {{song.artist}} -->
                                                                                             </small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div id="like">
-                                                    <div class="">
-                                                        <button @click="play()" v-if="!isPlaying" class="h-7 w-7 rounded-full bg-[blue] overflow-hidden flex items-center justify-center ">
-                                                                                        <i
-                                                                                            class="fa-solid fa-play text-white flex items-center justify-center w-full"></i>
-                                                                                    </button>
-                                                        <div @click="pause()" v-else class="h-7 w-7 rounded-full bg-[blue] overflow-hidden flex items-center justify-center ">
-                                                          
-                                                            <i class="fa-solid fa-pause text-white flex items-center justify-center w-full"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div>
+                                            <small class="text-white text-[12px]">
+                                                                                                 <!-- {{song.timer}} -->
+                                                    
+                                                                                                </small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="like">
+                                    <div class="">
+                                        <button @click="play()" v-if="!isPlaying" class="h-7 w-7 rounded-full bg-[blue] overflow-hidden flex items-center justify-center ">
+                                                                                            <i
+                                                                                                class="fa-solid fa-play text-white flex items-center justify-center w-full"></i>
+                                                                                        </button>
+                                        <div @click="pause()" v-else class="h-7 w-7 rounded-full bg-[blue] overflow-hidden flex items-center justify-center ">
+    
+                                            <i class="fa-solid fa-pause text-white flex items-center justify-center w-full"></i>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="my-10 mb-[8rem]">
-                            <div class="title">
-                                <div class="text-[20px] mb-4 text-white">
-                                    New Release.
+                    </div>
+    
+                </div>
+            </div>
+            <div class="w-full sm:hidden space-y-4 h-full ">
+                <div class="text-[20px] font-bold text-white">
+                    Top Charts
+                </div>
+                <div class="owl-carousel owl-theme block w-full z-[0] space-y-4 playlist" id="carousel">
+    
+                    <keep-alive>
+    
+                    </keep-alive>
+                    <div v-for="idks in idk" :key="idks.id">
+                    </div>
+                    <div class="p-3 bg-[rgba(0,0,0,.5)] rounded-sm w-full" v-for="song in songs" :key="song.id">
+                        <div class="w-full">
+                            <div class="flex items-center justify-between w-full">
+                                <div class="flex">
+                                    <div class="h-16 w-16 bg-red-500"></div>
+    
+                                    <div class="ml-3 leading-[20px]">
+                                        <div class="text-white text-[17px] font-light">
+                                            {{song.title}}
+                                        </div>
+                                        <small class="text-gray-300 text-[12px]">
+                                                                                               {{song.artist}}
+                                                                                            </small>
+                                        <div>
+                                            <small class="text-white text-[12px]">
+                                                                                                 {{song.timer}}
+                                                    
+                                                                                                </small>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="flex space-x-4 w-full">
-                                <div class="owl-carousel owl-theme block w-full z-[0] car" id="car">
-                                    <div class="w-2/4">
-                                        <img src="../assets/images/images/Rectangle_1.png" class="rounded-md w-full " alt="Sample 2">
-                                        <div class="text-[15px] text-center capitalize text-gray-300 mt-2">
-                                            life in a bubble
-                                        </div>
-                                    </div>
-                                    <div class="w-2/4">
-                                        <img src="../assets/images/images/Rectangle 14 (1).png" class="rounded-md w-full" alt="Sample 1">
-                                        <div class="text-[15px] text-center capitalize text-gray-300 mt-2">
-                                            Mountain
-                                        </div>
-                                    </div>
-                                    <div class="w-2/4">
-                                        <img src="../assets/images/images/Rectangle 14 (2).png" class="rounded-md w-full" alt="Sample 1">
-                                        <div class="text-[15px] text-center capitalize text-gray-300 mt-2">
-                                            limits
-                                        </div>
-                                    </div>
-                                    <div class="w-2/4">
-                                        <img src="../assets/images/images/Rectangle 14 (3).png" class="rounded-md w-full" alt="Sample 1">
-                                        <div class="text-[15px] text-center capitalize text-gray-300 mt-2">
-                                            everything black
-                                        </div>
-                                    </div>
-                                    <div class="w-2/4">
-                                        <img src="../assets/images/images/Rectangle 14 (4).png" class="rounded-md w-full" alt="Sample 1">
-                                        <div class="text-[15px] text-center capitalize text-gray-300 mt-2">
-                                            cancelled
-                                        </div>
-                                    </div>
-                                    <div class="w-2/4">
-                                        <img src="../assets/images/images/Rectangle 14 (5).png" class="rounded-md w-full" alt="Sample 1">
-                                        <div class="text-[15px] text-center capitalize text-gray-300 mt-2">
-                                            nomad
-                                        </div>
-                                    </div>
-                                    <div class="w-2/4">
-                                        <img src="../assets/images/images/Rectangle 14 (5).png" class="rounded-md w-full" alt="Sample 1">
-                                        <div class="text-[15px] text-center capitalize text-gray-300 mt-2">
-                                            nomad
+                                <div id="like">
+                                    <div class="">
+                                        <button @click="play()" v-if="!isPlaying" class="h-7 w-7 rounded-full bg-[blue] overflow-hidden flex items-center justify-center ">
+                                                                                            <i
+                                                                                                class="fa-solid fa-play text-white flex items-center justify-center w-full"></i>
+                                                                                        </button>
+                                        <div @click="pause()" v-else class="h-7 w-7 rounded-full bg-[blue] overflow-hidden flex items-center justify-center ">
+    
+                                            <i class="fa-solid fa-pause text-white flex items-center justify-center w-full"></i>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div> 
-            <!-- play function -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="my-10 mb-[8rem]">
+            <div class="title">
+                <div class="text-[20px] mb-4 text-white">
+                    New Release.
+                </div>
+            </div>
+            <div class="flex space-x-4 w-full">
+                <div class="owl-carousel owl-theme block w-full z-[0] car" id="car">
+                    <div class="w-2/4">
+                        <img src="../assets/images/images/Rectangle_1.png" class="rounded-md w-full " alt="Sample 2">
+                        <div class="text-[15px] text-center capitalize text-gray-300 mt-2">
+                            life in a bubble
+                        </div>
+                    </div>
+                    <div class="w-2/4">
+                        <img src="../assets/images/images/Rectangle 14 (1).png" class="rounded-md w-full" alt="Sample 1">
+                        <div class="text-[15px] text-center capitalize text-gray-300 mt-2">
+                            Mountain
+                        </div>
+                    </div>
+                    <div class="w-2/4">
+                        <img src="../assets/images/images/Rectangle 14 (2).png" class="rounded-md w-full" alt="Sample 1">
+                        <div class="text-[15px] text-center capitalize text-gray-300 mt-2">
+                            limits
+                        </div>
+                    </div>
+                    <div class="w-2/4">
+                        <img src="../assets/images/images/Rectangle 14 (3).png" class="rounded-md w-full" alt="Sample 1">
+                        <div class="text-[15px] text-center capitalize text-gray-300 mt-2">
+                            everything black
+                        </div>
+                    </div>
+                    <div class="w-2/4">
+                        <img src="../assets/images/images/Rectangle 14 (4).png" class="rounded-md w-full" alt="Sample 1">
+                        <div class="text-[15px] text-center capitalize text-gray-300 mt-2">
+                            cancelled
+                        </div>
+                    </div>
+                    <div class="w-2/4">
+                        <img src="../assets/images/images/Rectangle 14 (5).png" class="rounded-md w-full" alt="Sample 1">
+                        <div class="text-[15px] text-center capitalize text-gray-300 mt-2">
+                            nomad
+                        </div>
+                    </div>
+                    <div class="w-2/4">
+                        <img src="../assets/images/images/Rectangle 14 (5).png" class="rounded-md w-full" alt="Sample 1">
+                        <div class="text-[15px] text-center capitalize text-gray-300 mt-2">
+                            nomad
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- play function -->
         <!-- </div> -->
         <div class="w-full bg-black/20  backdrop-blur-md px-5 py-[10px] fixed left-0 bottom-0">
             <div class="absolute w-full h-full top-0 left-0 bottom-0 -z-10 right-0">
@@ -252,12 +252,12 @@
                     <img src="../assets/images/images/Rectangle 14 (1).png" class="h-[50%] w-[50%]" alt="">
                     <div>
                         <div class="title">
-                        {{title}}
+                            {{title}}
     
-                    </div>
-                    <div class="name text-white text-[14px]">
-                        {{name}}
-                    </div>
+                        </div>
+                        <div class="name text-white text-[14px]">
+                            {{name}}
+                        </div>
                     </div>
                 </div>
                 <div class="w-8/12 mx-auto ">
@@ -277,15 +277,15 @@
                                     </div>
                                 </div>
                                 <!-- PREV -->
-                                <div class="hidden sm:flex border rounded-full h-7 w-7 items-center justify-center" @click="control('prev')">
+                                <div class="hidden sm:flex border rounded-full h-7 w-7 items-center justify-center" id="prev">
                                     <i class="fa-solid fa-backward-step text-white  flex items-center justify-center"></i>
                                 </div>
                                 <!-- PLAY -->
                                 <div class="">
                                     <button @click="play()" v-if="!isPlaying" class="h-7 w-7 rounded-full bg-[blue] overflow-hidden flex items-center justify-center ">
-                                                                    <i
-                                                                        class="fa-solid fa-play text-white flex items-center justify-center w-full"></i>
-                                                                </button>
+                                                                        <i
+                                                                            class="fa-solid fa-play text-white flex items-center justify-center w-full"></i>
+                                                                    </button>
                                     <div @click="pause()" v-else class="h-7 w-7 rounded-full bg-[blue] overflow-hidden flex items-center justify-center ">
                                         <!-- <i class="fa-solid fa-play text-white flex items-center justify-center w-full"></i> -->
                                         <i class="fa-solid fa-pause text-white flex items-center justify-center w-full"></i>
@@ -293,7 +293,7 @@
                                 </div>
                                 <!-- NEXT -->
                                 <div>
-                                    <div @click="control('next')" class="h-7 w-7 border rounded-full flex items-center justify-center">
+                                    <div id="next" class="next h-7 w-7 border rounded-full flex items-center justify-center">
                                         <i class="fa-solid fa-forward-step text-white flex items-center justify-center"></i>
                                     </div>
                                 </div>
@@ -309,19 +309,19 @@
                         <div class="w-full hidden sm:block">
                             {{times}}
                             <!-- <div class="relative">
-                                                <div class="border w-full h-[2px] relative"></div>
-                                                <div class="absolute top-0 left-0 w-full">
-                                                    <div class="bg-[blue] w-7/12 h-[2px]"></div>
-                                                </div>
-                                            </div> -->
+                                                    <div class="border w-full h-[2px] relative"></div>
+                                                    <div class="absolute top-0 left-0 w-full">
+                                                        <div class="bg-[blue] w-7/12 h-[2px]"></div>
+                                                    </div>
+                                                </div> -->
                             <div class="range">
                                 <div class="thumb"><span></span></div>
                                 <div class="progress-bar"></div>
                                 <input type="range" id="range" min="0" max="100" value="5" class="w-full h-[5px]">
                             </div>
                             <!-- <div class="h-6 w-6 flex items-center justify-center absolute top-[90px]  left-[61%]  md:top-[85px] xl:top-[6px] md:left-1/2 bg-white/20 rounded-full">
-                                                <div class="h-3 w-3 bg-white rounded-full flex items-center justify-center"></div>
-                                            </div> -->
+                                                    <div class="h-3 w-3 bg-white rounded-full flex items-center justify-center"></div>
+                                                </div> -->
                         </div>
                     </div>
                 </div>
@@ -329,14 +329,14 @@
                 <div class="w-2/12 hidden md:block h-[84.34px]">
                     <div class="">
                         <!-- <div class=" w-4/12 md:w-3/12 lg:w-2/12">
-                                            <div class="" @click="volume()" v-if="!muted">
-                                                <i class="fa-solid fa-volume-high text-white"></i>
-                    
-                                            </div>
-                                            <div v-else @click="unMute()">
-                                                <i class="fa-solid fa-volume-xmark  text-white"></i>
-                                            </div>
-                                        </div> -->
+                                                <div class="" @click="volume()" v-if="!muted">
+                                                    <i class="fa-solid fa-volume-high text-white"></i>
+                        
+                                                </div>
+                                                <div v-else @click="unMute()">
+                                                    <i class="fa-solid fa-volume-xmark  text-white"></i>
+                                                </div>
+                                            </div> -->
                         <div class="speaker flex items-center  justify-center space-x-2 text-[24px]">
                             <i class="fa-solid fa-volume-low text-white"></i>
                             <div class="volume rounded-[25px] h-[5px] w-full bg-white my-[10px] mx-0" id="volume">
@@ -345,16 +345,16 @@
     
                         </div>
                         <!-- <div class="w-full">
-                                                               <div class="relative">
-                                                                 <div class="border w-full h-[2px] relative"></div>
-                                                                <div class="absolute top-0 left-0 w-full">
-                                                                    <div class="bg-[blue] w-7/12 h-[2px]"></div>
-                                                                </div>
-                                                               </div>
-                                                                <div class="h-6 w-6 flex items-center justify-center absolute top-[37px] right-1/2 bg-white/20 rounded-full">
-                                                                    <div class="h-3 w-3 bg-white rounded-full flex items-center justify-center"></div>
-                                                                </div>
-                                                            </div> -->
+                                                                   <div class="relative">
+                                                                     <div class="border w-full h-[2px] relative"></div>
+                                                                    <div class="absolute top-0 left-0 w-full">
+                                                                        <div class="bg-[blue] w-7/12 h-[2px]"></div>
+                                                                    </div>
+                                                                   </div>
+                                                                    <div class="h-6 w-6 flex items-center justify-center absolute top-[37px] right-1/2 bg-white/20 rounded-full">
+                                                                        <div class="h-3 w-3 bg-white rounded-full flex items-center justify-center"></div>
+                                                                    </div>
+                                                                </div> -->
                     </div>
                 </div>
             </div>
@@ -390,7 +390,7 @@ export default defineComponent({
 
 
 
-     
+
 
         const getSong = ref < [] > ([])
 
@@ -398,7 +398,8 @@ export default defineComponent({
         let audio = ref(new Audio())
         let title = ref(document.querySelector('.title') as HTMLDivElement) as any
         // const play = ref();
-        let name=ref(document.querySelector('.name') as HTMLDivElement) as any
+        let name = ref(document.querySelector('.name') as HTMLDivElement) as any
+        let nextSong=ref(document.querySelector('.next') as HTMLDivElement) as any
         let songIndex = 0
         let index = 19
         let rep
@@ -427,12 +428,41 @@ export default defineComponent({
 
                     function loadSong(songs: any) {
                         title.value = songs.name
-                        name.value=songs.artists[0].name
-                        console.log(name.value);
-                        
+                        name.value = songs.artists[0].name
+                        // console.log(name.value);
+
                         audio.value.src = songs.preview_url
                     }
 
+                    function prev() {
+                        songIndex--;
+
+                        if (songIndex < 0) {
+                            songIndex = items.length - 1;
+                        }
+
+                        loadSong(items[songIndex]);
+
+                        play();
+                    }
+
+                    function next() {
+                        songIndex++;
+
+                        if (songIndex > items.length - 1) {
+                            songIndex = 0;
+                        }
+
+                        loadSong(items[songIndex]);
+
+                        play();
+                        console.log("hey");
+                        
+                    }
+                    
+                    
+                    nextSong[0]?.value.addEventListener('click', next)
+                    console.log(nextSong);
                 })
                 // loadSong()
                 console.log(rep);
@@ -442,54 +472,7 @@ export default defineComponent({
             // console.log(res);
         }
 
-        function control(type: "next" | "prev") {
 
-            if (type === "next") {
-                // let items
-                // index.value += 1
-                 let rep = result.map((resp: any) => resp.tracks.items)
-                rep.map((items: any) => {
-                    loadSong(items[songIndex])
-
-                    function loadSong(songs: any) {
-                        title.value = songs.name
-                        audio.value.src = songs.preview_url
-                    }
-
-                })
-                songIndex++
-                // // function loadSong() {
-                //        if (songIndex > items.length - 1) {
-                //     songIndex = 0
-                // // }
-                //   }
-
-                // songIndex.value = index.value < items.length ? index.value : 0
-                // if (songIndex > items.length - 1) {
-                //     songIndex = 0
-                // }
-                // loadSong(items[songIndex])
-                audio.value.play()
-
-            };
-
-            if (type === "prev") {
-                // let items
-
-                // index.value += 1
-                // loadSong(items[songIndex])
-                // songIndex.value = index.value < items.length ? index.value : 0
-                // function loadSong() {
-                    songIndex--
-                    if (songIndex > 0) {
-                        songIndex = items.length - 1
-                    }
-                    
-                // }
-                audio.value.play()
-            };
-
-        }
 
         function play() {
 
@@ -715,10 +698,11 @@ export default defineComponent({
             name,
             rep,
             getMusic,
-            control,
+            // control,
             getSong,
             title,
-            audio
+            audio,
+            // nextSong
         }
     }
 })
