@@ -439,125 +439,125 @@ export default defineComponent({
     });
 
     //Methods
-    // const getMusic = async () => {
-    //   const config = {
-    //     headers: {
-    //       "X-RapidAPI-Key": "1a8e32f4d5mshb92db9dbf95d330p1872f8jsn4f33f760788e",
-    //       "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
-    //     },
-    //   };
-    //   try {
-    //     const res = await axios
-    //       .get(
-    //         `https://spotify23.p.rapidapi.com/albums/?ids=3IBcauSj5M2A6lTeffJzdv`,
-    //         config
-    //       )
-    //       .then((res) => res.data);
+    const getMusic = async () => {
+      const config = {
+        headers: {
+          "X-RapidAPI-Key": "1a8e32f4d5mshb92db9dbf95d330p1872f8jsn4f33f760788e",
+          "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
+        },
+      };
+      try {
+        const res = await axios
+          .get(
+            `https://spotify23.p.rapidapi.com/albums/?ids=3IBcauSj5M2A6lTeffJzdv`,
+            config
+          )
+          .then((res) => res.data);
 
-    //     const result = res.albums;
+        const result = res.albums;
 
-    //     const rep = result.map((res: any) => res.tracks.items);
+        const rep = result.map((res: any) => res.tracks.items);
 
-    //     const mappedSong = arrayToMap(rep) as unknown as SportifySong[];
+        const mappedSong = arrayToMap(rep) as unknown as SportifySong[];
 
-    //     songData.value = mappedSong;
+        songData.value = mappedSong;
 
-    //     currentSong.value = mappedSong[songIndex.value]
-    //   } catch (error: any) {
-    //     console.log(error);
-    //   }
-    //   // console.log(res);
-    // };
-//   function updateTime(e: any) {
-//       let { duration, currentTime } = e.srcElement
-//       const progressPercent = (currentTime / duration) * 100
-// const widths = document.querySelector(".progress-bar") as any
-//         widths.style.width = `${progressPercent}%` as any
+        currentSong.value = mappedSong[songIndex.value]
+      } catch (error: any) {
+        console.log(error);
+      }
+      // console.log(res);
+    };
+  function updateTime(e: any) {
+      let { duration, currentTime } = e.srcElement
+      const progressPercent = (currentTime / duration) * 100
+const widths = document.querySelector(".progress-bar") as any
+        widths.style.width = `${progressPercent}%` as any
 
 
-//  }
-//     function loadSong(song?: SportifySong) {
-//       if (song) {
-//         currentSong.value = song
-//       } else {
-//         currentSong.value = songData.value?.[songIndex.value]
-//       }
+ }
+    function loadSong(song?: SportifySong) {
+      if (song) {
+        currentSong.value = song
+      } else {
+        currentSong.value = songData.value?.[songIndex.value]
+      }
 
-//       name.value = currentSong.value?.artists[0]?.name;
-//       title.value = currentSong.value?.name
-//       audio.value.src = currentSong.value?.preview_url as unknown as string;
-//     }
+      name.value = currentSong.value?.artists[0]?.name;
+      title.value = currentSong.value?.name
+      audio.value.src = currentSong.value?.preview_url as unknown as string;
+    }
 
-//     function play(songId?: string) {
-//       isPlaying.value = true
-//       let song = undefined
+    function play(songId?: string) {
+      isPlaying.value = true
+      let song = undefined
 
-//       if (songId) {
-//         song = songData.value?.find((song) => song.id === songId)
-//       }
-//       audio.value.addEventListener('timeupdate',updateTime)
+      if (songId) {
+        song = songData.value?.find((song) => song.id === songId)
+      }
+      audio.value.addEventListener('timeupdate',updateTime)
 
-//       loadSong(song);
-//       audio.value.play();
-//     }
+      loadSong(song);
+      audio.value.play();
+    }
 
-//     function prev() {
-//       songIndex.value--
-//       if (songIndex.value < songData.value?.length) {
-//         songIndex.value = 0
-//       }
+    function prev() {
+      songIndex.value--
+      if (songIndex.value < songData.value?.length) {
+        songIndex.value = 0
+      }
 
-//       loadSong();
+      loadSong();
 
-//       play(currentSong.value);
-//     }
+      play(currentSong.value);
+    }
 
-//     function next() {
-//       songIndex.value++
-//       if (songIndex.value > songData.value?.length - 1) {
-//         songIndex.value = 0
-//       }
+    function next() {
+      songIndex.value++
+      if (songIndex.value > songData.value?.length - 1) {
+        songIndex.value = 0
+      }
 
-//       loadSong();
+      loadSong();
 
-//       play(currentSong.value);
-//       console.log("hey");
-//     }
+      play(currentSong.value);
+      console.log("hey");
+    }
 
-//     function pause() {
-//       isPlaying.value = false;
-//       audio.value.pause()
-//     }
-//     const volume = () => {
-//       player.value.muted = true;
-//       muted.value = true;
-//     };
-//     const unMute = () => {
-//       player.value.muted = false;
-//       muted.value = false;
-//     };
-//     async function searchMusic(e: any) {
-//       const config = {
-//         headers: {
-//           "X-RapidAPI-Key": "0c0167ae13msh3a8f6aadfb958bbp137e9djsn0e0867be8aa9",
-//           "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
-//         },
-//       };
-//       if (e.key === "Enter") {
-//         try {
-//           await axios
-//             .get(
-//               `https://spotify23.p.rapidapi.com/search/?q=${search.value}&type=albums`,
-//               config
-//             )
-//             .then((res) => res.data.albums.items)
-//             .then(setResults);
-//           // .then((res) => console.log(res.albums.items));
-//         } catch (error: any) {
-//           console.log(error.response);
-//         }
-//       }
-//     }
+    function pause() {
+      isPlaying.value = false;
+      audio.value.pause()
+    }
+    const volume = () => {
+      player.value.muted = true;
+      muted.value = true;
+    };
+    const unMute = () => {
+      player.value.muted = false;
+      muted.value = false;
+    };
+    async function searchMusic(e: any) {
+      const config = {
+        headers: {
+          "X-RapidAPI-Key": "0c0167ae13msh3a8f6aadfb958bbp137e9djsn0e0867be8aa9",
+          "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
+        },
+      };
+      if (e.key === "Enter") {
+        try {
+          await axios
+            .get(
+              `https://spotify23.p.rapidapi.com/search/?q=${search.value}&type=albums`,
+              config
+            )
+            .then((res) => res.data.albums.items)
+            .then(setResults);
+          // .then((res) => console.log(res.albums.items));
+        } catch (error: any) {
+          console.log(error.response);
+        }
+      }
+    }
 
     // function setResults(result: []) {
     //   searchResult.value = result;
