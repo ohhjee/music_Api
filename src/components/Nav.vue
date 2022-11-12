@@ -9,7 +9,7 @@
     
             </div>
             <div class="">
-                <input type="text" v-model="se.search" @keypress="searchMusic" class="px-6 py-2 focus:outline-1  bg-transparent" placeholder="Search Artist">
+                <input type="text" :value="search"  @input="searchMusic($event.target.value)" class="px-6 py-2 focus:outline-1  bg-transparent" placeholder="Search Artist">
     
             </div>
         </div>
@@ -48,48 +48,57 @@ import axios from 'axios'
 import store from '../store'
 // import env from ''
 export default defineComponent({
+    props: {
+        search: {
+            type: String,
+            required:false
+        }
+    },
     components: { MagnifyingGlassIcon },
 
-    setup() {
-        const se = ref({
-            search: '',
-            searchResult:[] as any
-        })
+    setup(props,{emit}) {
+        // const modelValue= ref("")
+     
+        const searchMusic = (value:any) => {
+           emit('input', value)
+        console.log(value);
+        
+    }
+
 
         // const search = ref < string > ("")
         // const searchResult = ref < [] > ([])
-        async function searchMusic(e: any) {
-            //    store.dispatch('search')
-            const config = {
-                headers: {
-                    "X-RapidAPI-Key": "0c0167ae13msh3a8f6aadfb958bbp137e9djsn0e0867be8aa9",
-                    "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
-                },
-            };
-            if (e.key === "Enter") {
-            try {
-                await axios
-                    .get(`https://spotify23.p.rapidapi.com/search/?q=${se.value.search}&type=albums`, config)
-                    .then((res) => res.data.albums.items)
-                    .then(setResults)
-                // .then((res) => console.log(res.albums.items));
-            } catch (error: any) {
-                console.log(error);
-            }
-            }
-        }
+        // async function searchMusic(e: any) {
+        //     //    store.dispatch('search')
+        //     const config = {
+        //         headers: {
+        //             "X-RapidAPI-Key": "0c0167ae13msh3a8f6aadfb958bbp137e9djsn0e0867be8aa9",
+        //             "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
+        //         },
+        //     };
+        //     if (e.key === "Enter") {
+        //     try {
+        //         await axios
+        //             .get(`https://spotify23.p.rapidapi.com/search/?q=${props.modelValue}&type=albums`, config)
+        //             .then((res) => res.data.albums.items)
+        //             .then(setResults)
+        //         // .then((res) => console.log(res.albums.items));
+        //     } catch (error: any) {
+        //         console.log(error);
+        //     }
+        //     }
+        // }
 
-        function setResults(result: []) {
-            se.value.searchResult = result;
-            // console.log(se.value.searchResult);
+        // function setResults(result: []) {
+        //     se.value.searchResult = result;
+        //     // console.log(se.value.searchResult);
             
-        }
-        store.dispatch('result', se)
+        // }
+  
         return {
             // search,
             searchMusic,
-            // searchResult
-            se
+            // modelValue
         }
     }
 
