@@ -6,36 +6,38 @@
         <div class="flex items-center">
             <div class="h-full flex items-center absolute">
                 <MagnifyingGlassIcon class="text-white w-4 h-4" />
-    
             </div>
-            <div class="">
-                <input type="text" :value="search"  @input="searchMusic($event.target.value)" class="px-6 py-2 focus:outline-1  bg-transparent" placeholder="Search Artist">
-    
-            </div>
+            <!-- <form @submit="searchMusic()">
+                <div>
+                    <input type="text" v-model="search" class="px-6 py-2 text-gray-200 focus:outline-1  bg-transparent"
+                        placeholder="Search Artist">
+                </div>
+            </form> -->
+            <Search></Search>
         </div>
     </div>
     <div class=" flex lg:hidden w-full justify-between">
         <div class="flex items-center space-x-3">
             <div class="w-10 h-10 flex m items-center space-y-2 justify-center flex-col">
                 <span class="bg-white w-[100%] h-[.5vh]"></span>
-    
+
                 <span class="bg-white w-full h-[.5vh]"></span>
-    
-    
+
+
                 <span></span>
-    
+
             </div>
             <img src="../assets/images/images/logo.svg" class="" alt="">
         </div>
         <div class="flex items-center ">
             <div class="h-full flex items-center ">
                 <MagnifyingGlassIcon class="text-white w-4 h-4" />
-    
+
             </div>
-    
+
         </div>
     </div>
-    
+
     <!-- <div class="bg-white">
             {{searchResult}}
         </div> -->
@@ -44,6 +46,7 @@
 <script lang="ts">
 import { MagnifyingGlassIcon } from '@heroicons/vue/24/outline'
 import { defineComponent, ref } from '@vue/runtime-core'
+import Search from './app/Seach.vue';
 import axios from 'axios'
 import store from '../store'
 // import env from ''
@@ -51,19 +54,19 @@ export default defineComponent({
     props: {
         search: {
             type: String,
-            required:false
+            required: false
         }
     },
-    components: { MagnifyingGlassIcon },
+    components: { MagnifyingGlassIcon, Search },
 
-    setup(props,{emit}) {
+    setup(props, { emit }) {
         // const modelValue= ref("")
-     
-        const searchMusic = (value:any) => {
-           emit('input', value)
-        console.log(value);
-        
-    }
+
+        const searchMusic = (value: any) => {
+            emit('input', value)
+            console.log(value);
+
+        }
 
 
         // const search = ref < string > ("")
@@ -92,9 +95,9 @@ export default defineComponent({
         // function setResults(result: []) {
         //     se.value.searchResult = result;
         //     // console.log(se.value.searchResult);
-            
+
         // }
-  
+
         return {
             // search,
             searchMusic,
