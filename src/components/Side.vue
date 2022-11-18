@@ -7,7 +7,7 @@
         <router-link :to="{ name: 'Home' }" class="flex items-center">
           <HomeIcon class="w-6 h-6 text-[blue]" />
         </router-link>
-        <router-link to="#" class="flex items-center">
+        <router-link :to="{name:'TopChart'}" class="flex items-center">
           <MusicalNoteIcon class="w-6 h-6 text-white" />
         </router-link>
         <router-link to="#" class="flex items-center">

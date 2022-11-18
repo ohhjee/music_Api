@@ -7,12 +7,6 @@
             <div class="h-full flex items-center absolute">
                 <MagnifyingGlassIcon class="text-white w-4 h-4" />
             </div>
-            <!-- <form @submit="searchMusic()">
-                <div>
-                    <input type="text" v-model="search" class="px-6 py-2 text-gray-200 focus:outline-1  bg-transparent"
-                        placeholder="Search Artist">
-                </div>
-            </form> -->
             <Search></Search>
         </div>
     </div>
@@ -29,13 +23,23 @@
             </div>
             <img src="../assets/images/images/logo.svg" class="" alt="">
         </div>
-        <div class="flex items-center ">
+        <div class="flex items-center">
             <div class="h-full flex items-center ">
-                <MagnifyingGlassIcon class="text-white w-4 h-4" />
-
+                <MagnifyingGlassIcon class="text-white w-4 h-4 cursor-pointer" @click="Mobilesearch()" />
             </div>
-
         </div>
+    </div>
+    <div class="lg:hidden  fixed w-full z-[20] left-0 top-0 min-h-screen" id="searchId" >
+        <div class="flex w-full  justify-center min-h-screen">
+            <div class="w-11/12">
+<div class="flex items-center justify-between  w-full">
+    <div class="cursor-pointer mr-3" @click="hidSearchBar()">
+        <XMarkIcon class="w-8 h-8 mt-[10px] text-white flex items-center"></XMarkIcon>
+    </div>
+        <Search class="z-[30]"></Search>
+</div>
+            </div>
+    </div>
     </div>
 
     <!-- <div class="bg-white">
@@ -44,70 +48,43 @@
 </template>
 
 <script lang="ts">
-import { MagnifyingGlassIcon } from '@heroicons/vue/24/outline'
+import { MagnifyingGlassIcon,XMarkIcon } from '@heroicons/vue/24/outline'
 import { defineComponent, ref } from '@vue/runtime-core'
 import Search from './app/Seach.vue';
 import axios from 'axios'
 import store from '../store'
 // import env from ''
 export default defineComponent({
-    props: {
-        search: {
-            type: String,
-            required: false
+
+    components: { MagnifyingGlassIcon,XMarkIcon, Search },
+
+    setup() {
+        const Mobilesearch = () => {
+            document.getElementById("searchId")?.classList.add("show")
         }
-    },
-    components: { MagnifyingGlassIcon, Search },
-
-    setup(props, { emit }) {
-        // const modelValue= ref("")
-
-        const searchMusic = (value: any) => {
-            emit('input', value)
-            console.log(value);
-
+        const hidSearchBar = () => {
+            document.getElementById("searchId")?.classList.remove("show") 
+            console.log("remove");
         }
-
-
-        // const search = ref < string > ("")
-        // const searchResult = ref < [] > ([])
-        // async function searchMusic(e: any) {
-        //     //    store.dispatch('search')
-        //     const config = {
-        //         headers: {
-        //             "X-RapidAPI-Key": "0c0167ae13msh3a8f6aadfb958bbp137e9djsn0e0867be8aa9",
-        //             "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
-        //         },
-        //     };
-        //     if (e.key === "Enter") {
-        //     try {
-        //         await axios
-        //             .get(`https://spotify23.p.rapidapi.com/search/?q=${props.modelValue}&type=albums`, config)
-        //             .then((res) => res.data.albums.items)
-        //             .then(setResults)
-        //         // .then((res) => console.log(res.albums.items));
-        //     } catch (error: any) {
-        //         console.log(error);
-        //     }
-        //     }
-        // }
-
-        // function setResults(result: []) {
-        //     se.value.searchResult = result;
-        //     // console.log(se.value.searchResult);
-
-        // }
-
         return {
-            // search,
-            searchMusic,
-            // modelValue
+            Mobilesearch,
+            hidSearchBar
         }
     }
 
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+#searchId{
+    opacity: 0;
+    transition: 200ms ease-in;
+    pointer-events: none;
+}
 
+.show{
+    pointer-events: all !important;
+    opacity: 1 !important;
+    background-color: rgb(0 0 0 / 0.6);
+}
 </style>

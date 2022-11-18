@@ -1,7 +1,6 @@
 <template>
   <div>
-    <Nav @input="looking()" v-model="search"></Nav>
-    {{search}}
+    <Nav></Nav>
     <div class="lg:flex lg:space-x-3 mt-3 lg:mt-0">
       <Side></Side>
 
@@ -15,9 +14,8 @@
             <div class="p-3 bg-[rgba(0,0,0,.5)] rounded-sm">
               <div class="flex justify-between items-center">
                 <div class="flex">
-                  <div class="h-20 w-5/12"></div>
-
-                  <div class="ml-3 w-6/12 leading-[20px]">
+                  <!-- <div class="h-20 w-5/12"></div> -->
+                  <div class="ml-3  leading-[20px]">
                     <div class="text-white text-[17px] font-light">
                       {{ song.artists[0].name }}
                       <!-- {{song.id}} -->
@@ -101,19 +99,22 @@
           </div>
         </div>
         <div class="w-full hidden sm:block space-y-4 h-full">
-          <div class="text-[20px] font-bold text-white">Top Charts</div>
+          <router-link to="#" class="text-[20px] font-bold text-white">Top Charts</router-link>
           <div class="space-y-4">
+            <div class="space-y-4" v-for="song in SongData" :key="song.id">
             <div class="p-3 bg-[rgba(0,0,0,.5)] rounded-sm">
+              <div class="flex justify-between flex-col ">
               <div class="flex justify-between items-center">
                 <div class="flex">
-                  <div class="h-16 w-16 bg-red-500"></div>
-
-                  <div class="ml-3 leading-[20px]">
+                  <!-- <div class="h-20 w-5/12"></div> -->
+                  <div class="ml-3  leading-[20px]">
                     <div class="text-white text-[17px] font-light">
-                      <!-- {{song.title}} -->
+                      {{ song.artists[0].name }}
+                      <!-- {{song.id}} -->
+                      <!-- {{currentSong?.id}} -->
                     </div>
                     <small class="text-gray-300 text-[12px]">
-                      <!-- {{song.artist}} -->
+                      {{ song.name }}
                     </small>
                     <div>
                       <small class="text-white text-[12px]">
@@ -123,62 +124,88 @@
                   </div>
                 </div>
                 <div id="like">
-                  <div class="">
-                    <button @click="play()" v-if="!isPlaying"
+                  <div class="" v-if="song.id == currentSong?.id">
+                    <button id="audio" @click="play()" v-if="!isPlaying"
                       class="h-7 w-7 rounded-full bg-[blue] overflow-hidden flex items-center justify-center">
                       <i class="fa-solid fa-play text-white flex items-center justify-center w-full"></i>
                     </button>
-                    <div @click="pause()" v-else
+                    <button @click="pause()" v-else
                       class="h-7 w-7 rounded-full bg-[blue] overflow-hidden flex items-center justify-center">
+                      <!-- <i class="fa-solid fa-play text-white flex items-center justify-center w-full"></i> -->
                       <i class="fa-solid fa-pause text-white flex items-center justify-center w-full"></i>
-                    </div>
+                    </button>
+                  </div>
+                  <div class="" v-else>
+                    <button id="audio" @click="play(song.id)"
+                      class="h-7 w-7 rounded-full bg-[blue] overflow-hidden flex items-center justify-center">
+                      <i class="fa-solid fa-play text-white flex items-center justify-center w-full"></i>
+                    </button>
+
                   </div>
                 </div>
+              <!-- </div> -->
+            </div>
+          </div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="w-full sm:hidden space-y-4 h-full">
-        <div class="text-[20px] font-bold text-white">Top Charts</div>
-        <div class="owl-carousel owl-theme block w-full z-[0] space-y-4 playlist" id="carousel">
-          <keep-alive> </keep-alive>
-          <div v-for="idks in idk" :key="idks.id"></div>
-          <div class="p-3 bg-[rgba(0,0,0,.5)] rounded-sm w-full">
-            <div class="w-full">
-              <div class="flex items-center justify-between w-full">
+        <router-link to="#" class="text-[20px] font-bold text-white">Top Charts</router-link>
+        <div class="">
+          <div class="owl-carousel owl-theme block w-full z-[0] space-y-4 playlist" id="carousel">
+            <div class="w-full space-y-5">
+            <div class="space-y-4 w-full" v-for="song in SongData" :key="song.id">
+          
+            <div class="p-3 bg-[rgba(0,0,0,.5)] rounded-sm">
+              <div class="flex justify-between flex-col w-full ">
+              <div class="flex justify-between items-center">
                 <div class="flex">
-                  <div class="h-16 w-16 bg-red-500"></div>
-
-                  <div class="ml-3 leading-[20px]">
+                  <!-- <div class="h-20 w-5/12"></div> -->
+                  <div class="ml-3  leading-[20px]">
                     <div class="text-white text-[17px] font-light">
-                      <!-- {{ song.title }} -->
+                      {{ song.artists[0].name }}
+                      <!-- {{song.id}} -->
+                      <!-- {{currentSong?.id}} -->
                     </div>
                     <small class="text-gray-300 text-[12px]">
-                      <!-- {{ song.artist }} -->
+                      {{ song.name }}
                     </small>
                     <div>
                       <small class="text-white text-[12px]">
-                        <!-- {{ song.timer }} -->
+                        <!-- {{song.timer}} -->
                       </small>
                     </div>
                   </div>
                 </div>
                 <div id="like">
-                  <div class="">
-                    <button @click="play()" v-if="!isPlaying"
+                  <div class="" v-if="song.id == currentSong?.id">
+                    <button id="audio" @click="play()" v-if="!isPlaying"
                       class="h-7 w-7 rounded-full bg-[blue] overflow-hidden flex items-center justify-center">
                       <i class="fa-solid fa-play text-white flex items-center justify-center w-full"></i>
                     </button>
-                    <div @click="pause()" v-else
+                    <button @click="pause()" v-else
                       class="h-7 w-7 rounded-full bg-[blue] overflow-hidden flex items-center justify-center">
+                      <!-- <i class="fa-solid fa-play text-white flex items-center justify-center w-full"></i> -->
                       <i class="fa-solid fa-pause text-white flex items-center justify-center w-full"></i>
-                    </div>
+                    </button>
+                  </div>
+                  <div class="" v-else>
+                    <button id="audio" @click="play(song.id)"
+                      class="h-7 w-7 rounded-full bg-[blue] overflow-hidden flex items-center justify-center">
+                      <i class="fa-solid fa-play text-white flex items-center justify-center w-full"></i>
+                    </button>
+
                   </div>
                 </div>
+              <!-- </div> -->
+            </div>
+          </div>
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -231,20 +258,20 @@
     </div>
     <!-- play function -->
     <!-- </div> -->
-    <div class="w-full bg-black/20 backdrop-blur-md px-5 py-[10px] fixed left-0 bottom-0">
+    <div class="w-full z-[30000000] bg-black/20 backdrop-blur-md px-5 py-[10px] fixed left-0 bottom-0">
       <div class="absolute w-full h-full top-0 left-0 bottom-0 -z-10 right-0">
         <div class="bg-[url('../../assets/images/images/Rectangle 14 (1).png')] w-full h-full blur-sm bg-no-repeat">
         </div>
       </div>
       <div class="flex items-center justify-between lg:container lg:mx-auto">
         <div class="w-2/12 md:w-2/12 flex items-center space-x-2">
-          <img src="../assets/images/images/Rectangle 14 (1).png" class="h-[50%] w-[50%]" alt="" />
-          <div>
-            <div class="title">
-              {{ title }}
-            </div>
+          <!-- <img src="../assets/images/images/Rectangle 14 (1).png" class="h-[50%] w-[50%]" alt="" /> -->
+          <div class="">
             <div class="name text-white text-[14px]">
               {{ name }}
+            </div>
+            <div class="title text-gray-200 w-full">
+              {{ title }}
             </div>
           </div>
         </div>
@@ -296,7 +323,7 @@
             </div>
             <!-- TIMER -->
             <div class="w-full hidden sm:block">
-              {{ times }}
+              <!-- {{ times }} -->
               <!-- <div class="relative">
                                                                     <div class="border w-full h-[2px] relative"></div>
                                                                     <div class="absolute top-0 left-0 w-full">
@@ -366,7 +393,11 @@ import Songs from "../Data/songs";
 import { arrayToMap } from "../util/arrayToMap";
 
 export default defineComponent({
-  props: ["searchResult"],
+  props: {
+    search:{
+      type:String
+    }
+  },
   components: {
     Nav,
     Side,
@@ -398,7 +429,7 @@ export default defineComponent({
         loop: true,
         responsiveClass: true,
         margin: 10,
-        center: true,
+        // center: true,
         responsive: {
           0: {
             items: 1,
@@ -422,8 +453,7 @@ export default defineComponent({
     const songIndex = ref<number>(0);
     const songData = ref<SportifySong[]>();
     const currentSong = ref<SportifySong>();
-
-    const idk = computed(() => store.state.songs.data);
+    // const idk = computed(() => store.state.songs.data);
     const getSong = ref<[]>();
     const audio = ref(new Audio());
     const title = ref(document.querySelector(".title") as HTMLDivElement) as any;
@@ -435,7 +465,7 @@ export default defineComponent({
   
 
     onMounted(() => {
-      // getMusic();
+      getMusic();
     });
 
     //Methods
@@ -475,7 +505,13 @@ const widths = document.querySelector(".progress-bar") as any
         widths.style.width = `${progressPercent}%` as any
 
 
- }
+  }
+//  const setProgress = (e:any) => {
+//    const click = e.offsetX;
+//    const width = 
+//    const duration = audio.value.duration  
+//    audio.value.currentTime = (click/width)*duration
+//  }
     function loadSong(song?: SportifySong) {
       if (song) {
         currentSong.value = song
@@ -491,12 +527,13 @@ const widths = document.querySelector(".progress-bar") as any
     function play(songId?: string) {
       isPlaying.value = true
       let song = undefined
+    const range =ref(document.querySelector("#range") as HTMLDivElement) as any
+      // range.value.addEventListener('click',setProgress)
+      audio.value.addEventListener('timeupdate', updateTime)
 
       if (songId) {
         song = songData.value?.find((song) => song.id === songId)
       }
-      audio.value.addEventListener('timeupdate',updateTime)
-
       loadSong(song);
       audio.value.play();
     }
@@ -521,7 +558,7 @@ const widths = document.querySelector(".progress-bar") as any
       loadSong();
 
       play(currentSong.value);
-      console.log("hey");
+      // console.log("hey");
     }
 
     function pause() {
@@ -536,64 +573,26 @@ const widths = document.querySelector(".progress-bar") as any
       player.value.muted = false;
       muted.value = false;
     };
-    async function searchMusic(e: any) {
-      const config = {
-        headers: {
-          "X-RapidAPI-Key": "0c0167ae13msh3a8f6aadfb958bbp137e9djsn0e0867be8aa9",
-          "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
-        },
-      };
-      if (e.key === "Enter") {
-        try {
-          await axios
-            .get(
-              `https://spotify23.p.rapidapi.com/search/?q=${search.value}&type=albums`,
-              config
-            )
-            .then((res) => res.data.albums.items)
-            .then(setResults);
-          // .then((res) => console.log(res.albums.items));
-        } catch (error: any) {
-          console.log(error.response);
-        }
-      }
-    }
-
-    // function setResults(result: []) {
-    //   searchResult.value = result;
-    //   console.log(search.value);
-    // }
-    const looking = () => {
-      console.log(search.value);
-      // console.log(value);
-      
-      
-    }
-
+   
     return {
-      // idk,
-      search,
-      looking
-      // muted,
-      // SongData: songData,
-      // isPlaying,
-      // // Songs,
-      // // currentSong,
-      // times,
-      // getSong,
-      // name,
-      // title,
-      // audio,
-      // getMusic,
-      // currentSong,
-      // Side,
-      // Nav,
-      // volume,
-      // play,
-      // pause,
-      // unMute,
-      // next,
-      // prev
+      muted,
+      SongData: songData,
+      isPlaying,
+      times,
+      getSong,
+      name,
+      title,
+      audio,
+      getMusic,
+      currentSong,
+      Side,
+      Nav,
+      volume,
+      play,
+      pause,
+      unMute,
+      next,
+      prev
     };
   },
 });
